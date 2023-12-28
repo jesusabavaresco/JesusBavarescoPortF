@@ -11,7 +11,6 @@ gsap.registerPlugin(TextPlugin);
 
 const About = () => {
   const aboutRef = useRef(null);
-
   useEffect(() => {
     gsap.to(aboutRef.current, {
       scrollTrigger: {
