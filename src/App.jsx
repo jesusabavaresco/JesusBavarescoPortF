@@ -8,7 +8,7 @@ function App() {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <div style={{backgroundColor:'black', height:'100%', position:'relative', overflow: showMenu === true && 'hidden'}}>
+    <div style={{backgroundColor:'black', height:'100%', position:'relative', overflow: showMenu === true && 'hidden', overflowX:'hidden'}}>
       <Routes>
         <Route path="/" element={<Home/>}/> 
         <Route path="/about" element={<AboutPage/>}/> 
