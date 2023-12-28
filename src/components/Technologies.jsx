@@ -6,11 +6,13 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Ribbon from "./Ribbon.jsx";
 import Ribbon2 from "./Ribbon2.jsx";
+import { useTheme } from "./ThemeContext.jsx";
 // import { TextPlugin } from "gsap/TextPlugin";
 gsap.registerPlugin(ScrollTrigger)
 
 
-const Tech = () => {
+const Tech = ({showMenu}) => {
+  const { themeChange } = useTheme()
   const techRef = useRef(null)
   useEffect(() => {
     const moveTech = techRef.current
@@ -36,7 +38,7 @@ const Tech = () => {
   return (
     <Stack padding={5}>
     <ThemeProvider theme={theme}>
-        <Typography fontSize={30} color={"#d1d5db"} display={{
+        <Typography fontSize={30} color={themeChange.palette.text.primary} display={{
           xs:'block',
           sm:'block',
           md:'none',
@@ -45,7 +47,7 @@ const Tech = () => {
         }}>
           Technologies i use
         </Typography>
-      <Typography fontSize={50} color={"#d1d5db"} display={{
+      <Typography fontSize={50} color={themeChange.palette.text.primary} display={{
           xs:'none',
           sm:'none',
           md:'block',
@@ -53,7 +55,7 @@ const Tech = () => {
           xl:'block'
         }}>Technologies i use</Typography>
     </ThemeProvider>
-    <Stack ref={techRef}>
+    <Stack ref={techRef} display={showMenu && 'none'}>
     <Ribbon />
     <Ribbon2 />
     </Stack>

@@ -5,8 +5,10 @@ import AW1 from "../assets/ArcadeWorld1.jpeg";
 import ATH1 from "../assets/ATH1.jpeg";
 import Swal from "sweetalert2";
 import { Stack } from "@mui/system";
+import { useTheme } from "./ThemeContext.jsx";
 
 const Proyects = () => {
+  const { themeChange } = useTheme();
   const hoverSA = {
     ':hover':{
       cursor: 'pointer'
@@ -21,7 +23,7 @@ const Proyects = () => {
   return (
     <Grid container p={5} pt={0}>
       <ThemeProvider theme={theme}>
-        <Typography fontSize={30} color={"#d1d5db"} display={{
+        <Typography fontSize={30} color={themeChange.palette.text.primary} display={{
           xs:'block',
           sm:'block',
           md:'none',
@@ -30,7 +32,7 @@ const Proyects = () => {
         }}>
           Recent Projects
         </Typography>
-        <Typography fontSize={50} color={"#d1d5db"} display={{
+        <Typography fontSize={50} color={themeChange.palette.text.primary} display={{
           xs:'none',
           sm:'none',
           md:'block',
@@ -63,11 +65,11 @@ const Proyects = () => {
             <img width='650px' height='350px' src={AW1} alt="" />
               </Stack>
             <ThemeProvider theme={theme}>
-              <Typography pt={2} color={"#d1d5db"}>
+              <Typography pt={2} color={themeChange.palette.text.primary}>
                 ARCADE WORLD
               </Typography>
             </ThemeProvider>
-            <Typography pb={2} color={"#9ca3af"}>
+            <Typography pb={2} color={themeChange.palette.text.four}>
               This was the final project of the SoyHenry bootcamp, carried out
               by a team of 8 members with unique skills. Developed entirely from
               scratch, including the database, back end, and front end, it
@@ -99,11 +101,11 @@ const Proyects = () => {
             <img width='650px' height='350px' src={ATH1} alt="" />
             </Stack>
             <ThemeProvider theme={theme}>
-              <Typography pt={2} color={"#d1d5db"}>
+              <Typography pt={2} color={themeChange.palette.text.primary}>
                 ATH
               </Typography>
             </ThemeProvider>
-            <Typography pb={2} color={"#9ca3af"}>
+            <Typography pb={2} color={themeChange.palette.text.four}>
               This is a project I carried out together with a colleague for a
               client in Spain, lasting 2 weeks. We implemented the entire front
               end of the project with a Windows 95-based design using Bootstrap.

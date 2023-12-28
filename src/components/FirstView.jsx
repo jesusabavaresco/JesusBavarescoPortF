@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Avatar, Button, Grid, Stack, Typography } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./Theme.jsx";
+import { useTheme } from './ThemeContext';
 // import Typed from "typed.js";
 import { useRef } from "react";
 import chucho from "../assets/chucho.jpeg";
@@ -13,6 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 
 const FirstView = ({ showMenu }) => {
+  const { themeChange } = useTheme();
   const one = useRef(null);
   const two = useRef(null);
   const three = useRef(null);
@@ -143,7 +145,7 @@ const FirstView = ({ showMenu }) => {
         >
           <Typography
             ref={one}
-            color={"#d1d5db"}
+            color={themeChange.palette.text.primary}
             fontSize={75}
             textTransform={"uppercase"}
             sx={{
@@ -161,11 +163,11 @@ const FirstView = ({ showMenu }) => {
           </Typography>
           <Typography
             ref={one}
-            color={"#d1d5db"}
             fontSize={135}
             textTransform={"uppercase"}
             sx={{
               hoverStyles,
+              color: themeChange.palette.text.primary ,
               display: {
                 xs: "none",
                 sm: "none",
@@ -188,7 +190,7 @@ const FirstView = ({ showMenu }) => {
         >
           <Typography
             ref={two}
-            color={"#d1d5db"}
+            color={themeChange.palette.text.primary}
             fontSize={75}
             textTransform={"uppercase"}
             sx={{
@@ -206,7 +208,7 @@ const FirstView = ({ showMenu }) => {
           </Typography>
           <Typography
             ref={two}
-            color={"#d1d5db"}
+            color={themeChange.palette.text.primary}
             fontSize={135}
             textTransform={"uppercase"}
             sx={{
@@ -228,7 +230,7 @@ const FirstView = ({ showMenu }) => {
           <Stack direction="row" spacing={20}>
             <Typography
               ref={three}
-              color={"#eafe9b"}
+              color={themeChange.palette.text.secondary}
               fontSize={50}
               textTransform={"uppercase"}
               margin={0}
@@ -248,7 +250,7 @@ const FirstView = ({ showMenu }) => {
             </Typography>
             <Typography
               ref={three}
-              color={"#eafe9b"}
+              color={themeChange.palette.text.third}
               fontSize={125}
               textTransform={"uppercase"}
               sx={{
@@ -297,9 +299,9 @@ const FirstView = ({ showMenu }) => {
         alignItems="flex-start"
         flexDirection={"column"}
         mt={8}
-      >
+        >
         {/* <Typography ref={freeLance} color={"#fff"}>101001100110011001101010101001100101011001</Typography> */}
-        <Typography ref={freeLance} color={"#fff"}>
+        <Typography ref={freeLance} color={themeChange.palette.text.secondary}>
           I would love to work with you!
         </Typography>
         <a href="mailto:jesusbavaresco@gmail.com">
@@ -311,7 +313,7 @@ const FirstView = ({ showMenu }) => {
               marginLeft: "-7px",
               display: showMenu === true && "none",
             }}
-          >
+            >
             Let's talk
           </Button>
         </a>

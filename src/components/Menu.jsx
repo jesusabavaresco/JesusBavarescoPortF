@@ -3,10 +3,14 @@ import CloseIcon from '@mui/icons-material/Close';
 import { IconButton, Stack, Typography } from '@mui/material';
 import { gsap } from "gsap";
 import { Link } from 'react-router-dom';
+import { useTheme } from "./ThemeContext.jsx";
+
 // import { TextPlugin } from "gsap/TextPlugin";
 // gsap.registerPlugin(TextPlugin)
 
 function Menu({setShowMenu}) {
+  const { themeChange } = useTheme();
+
   const menuRef = useRef(null)
   const closeRef = useRef(null)
   const links = useRef(null)
@@ -47,7 +51,7 @@ function Menu({setShowMenu}) {
   };
 
   return (
-    <Stack ref={menuRef} display='flex' sx={{backgroundColor:'#eafe9b'}} height='100vh'>
+    <Stack ref={menuRef} display='flex' sx={{backgroundColor:themeChange.palette.background.ribbon}} height='100vh'>
       <Stack alignItems='end'>
         <IconButton sx={{color:'black', padding:'2rem'}} onClick={closeMenu}><CloseIcon/></IconButton>
       </Stack>

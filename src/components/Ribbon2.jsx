@@ -1,11 +1,12 @@
 import React, { useRef, useEffect } from "react";
 import { Avatar, Grid, Stack, Typography } from "@mui/material";
+import { useTheme } from "./ThemeContext";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Ribbon = ({}) => {
-
+  const { themeChange } = useTheme();
   const img2 = {
     alignItems: 'center',
     marginTop:'.5rem',
@@ -26,7 +27,6 @@ const Ribbon = ({}) => {
     height: "70px",
     width: "100vw",
     left: "-40px",
-    backgroundColor: "#eafe9b",
     transform: "rotate(-2deg)",
   };
   const slideTrack2 = {
@@ -53,7 +53,7 @@ const Ribbon = ({}) => {
     },
   };
   return (
-    <Stack sx={slider2}>
+    <Stack sx={{...slider2, backgroundColor: themeChange.palette.background.ribbon}}>
       <Stack sx={rib2}>
         <Stack sx={slideTrack2}>
           <Stack sx={slide2} pr={8}>

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Grid, Stack, Typography } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./Theme.jsx";
+import { useTheme } from "./ThemeContext.jsx";
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -10,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 
 const About = () => {
+  const { themeChange, lightMode } = useTheme();
   const aboutRef = useRef(null);
   useEffect(() => {
     gsap.to(aboutRef.current, {
@@ -30,9 +32,13 @@ const About = () => {
     const handleScroll = () => {
       if (aboutRef.current) {
         const scrollPosition = window.scrollY;
-        const color = scrollPosition > 700 ? "#d1d5db" : "#3b3a3a";
-
-        aboutRef.current.style.color = color;
+        if(lightMode === true) {
+          const colorLight = scrollPosition > 700 ? "#0E352E" : "#3b3a3a";
+          aboutRef.current.style.color = colorLight;
+        } else {
+          const color = scrollPosition > 700 ? "#d1d5db" : "#3b3a3a";
+          aboutRef.current.style.color = color;
+        }
       }
     };
     window.addEventListener("scroll", handleScroll);
@@ -46,7 +52,7 @@ const About = () => {
       <Grid>
         <ThemeProvider theme={theme}>
 
-        <Typography fontSize={30} color={"#d1d5db"} display={{
+        <Typography fontSize={30} color={themeChange.palette.text.primary} display={{
           xs:'block',
           sm:'block',
           md:'none',
@@ -55,7 +61,7 @@ const About = () => {
         }}>
           About me
         </Typography>
-            <Typography fontSize={50} color={"#d1d5db"} display={{
+            <Typography fontSize={50} color={themeChange.palette.text.primary} display={{
           xs:'none',
           sm:'none',
           md:'block',
@@ -69,7 +75,7 @@ const About = () => {
         <Typography
           ref={aboutRef}
           fontSize={20}
-          color={"#d1d5db"}
+          color={themeChange.palette.text.primary}
           width={{
             xs:'100%',
             sm:'100%',
