@@ -3,8 +3,10 @@ import { ThemeProvider } from "@mui/material/styles";
 import theme from "./Theme.jsx";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import { useTheme } from "./ThemeContext.jsx";
 
 const Contact = () => {
+  const { themeChange } = useTheme();
   return (
     <Grid p={2}>
       <Grid container p={5} pt={0}>
@@ -12,7 +14,7 @@ const Contact = () => {
           <Grid item xs={12}>
             <Typography
               fontSize={30}
-              color={"#d1d5db"}
+              color={themeChange.palette.text.primary}
               display={{
                 xs: "block",
                 sm: "block",
@@ -25,7 +27,7 @@ const Contact = () => {
             </Typography>
             <Typography
               fontSize={50}
-              color={"#d1d5db"}
+              color={themeChange.palette.text.primary}
               display={{
                 xs: "none",
                 sm: "none",
@@ -50,7 +52,7 @@ const Contact = () => {
               }}
             >
               <a href="https://www.linkedin.com/in/jesusbavaresco">
-                <LinkedInIcon sx={{ color: "#9ca3af" }} />
+                <LinkedInIcon sx={{ color: themeChange.palette.text.four }} />
               </a>
             </Stack>
           </Grid>
@@ -63,7 +65,7 @@ const Contact = () => {
                 >
                   <Typography
                     fontSize={15}
-                    color={"#d1d5db"}
+                    color={themeChange.palette.text.primary}
                     display={{
                       xs: "block",
                       sm: "block",
@@ -84,7 +86,7 @@ const Contact = () => {
               >
                 <Typography
                   onClick
-                  sx={{ color: "#d1d5db" }}
+                  sx={{ color: themeChange.palette.text.primary }}
                   fontSize={35}
                   display={{
                     xs: "none",
@@ -110,7 +112,7 @@ const Contact = () => {
               }}
             >
               <a href="https://github.com/jesusabavaresco">
-                <GitHubIcon sx={{ color: "#9ca3af" }} />
+                <GitHubIcon sx={{ color: themeChange.palette.text.four }} />
               </a>
             </Stack>
           </Grid>
@@ -119,14 +121,14 @@ const Contact = () => {
       <Grid container>
         <Grid items xs={6} md={6} lg={6} xl={6}>
           <Stack display="flex" textAlign="left">
-            <Typography sx={{ color: "#9ca3af", textTransform: "uppercase" }}>
+            <Typography sx={{ color: themeChange.palette.text.four, textTransform: "uppercase" }}>
               San Jose, CR
             </Typography>
           </Stack>
         </Grid>
         <Grid items xs={6} md={6} lg={6} xl={6}>
           <Stack display="flex" textAlign="end">
-            <Typography sx={{ color: "#9ca3af" }}>JB</Typography>
+            <Typography sx={{ color: themeChange.palette.text.four }}>JB</Typography>
           </Stack>
         </Grid>
       </Grid>

@@ -1,11 +1,13 @@
 import { Stack, Typography } from "@mui/material";
 import { useRef, useEffect } from "react";
+import { useTheme } from "./ThemeContext";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import { TextPlugin } from "gsap/TextPlugin";
 gsap.registerPlugin(ScrollTrigger)
 
 const Spinn = ({ text }) => {
+  const { themeChange } = useTheme();
   const spinn = useRef(null);
   useEffect(() => {
     const spinnTxt = spinn.current;
@@ -67,7 +69,7 @@ const spinningText = {
     // <Stack alignItems={'self-end'} sx={{ ...spinningWrap, ...spinn }}>
     <Stack alignItems={'self-end'} sx={{ ...spinningWrap }}>
       <Stack ref={spinn} sx={spinningText}>
-        <Typography  color={'white'}>{text.split('').map((letter, i) => (
+        <Typography  color={themeChange.palette.text.secondary}>{text.split('').map((letter, i) => (
           <Typography
             sx={SpiSpan}
             key={i}

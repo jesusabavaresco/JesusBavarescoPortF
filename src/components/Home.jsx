@@ -16,7 +16,7 @@ function Home() {
       <Main showMenu={showMenu} setShowMenu={setShowMenu}/>
       <FirstView showMenu={showMenu}/>
       <About showMenu={showMenu}/>
-      <Tech/>
+      <Tech showMenu={showMenu}/>
       <Proyects/>
       <Contact />
     </div>
