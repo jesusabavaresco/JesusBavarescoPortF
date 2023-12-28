@@ -17,7 +17,6 @@ const Ribbon = ({}) => {
     overflow: "hidden",
     height: "70px",
     width: "100vw",
-    top: '-80px',
     borderTop: '3px solid #fff',
     borderBottom: '3px solid #fff'
   };
@@ -39,7 +38,13 @@ const Ribbon = ({}) => {
     },
   };
   return (
-    <Stack sx={slider3}>
+    <Stack sx={{...slider3, top:{
+      xs:'-40px',
+      sm:'-40px',
+      md:'-60px',
+      lg:'-80px',
+      xl:'-80px',
+    } }}>
       <Stack sx={rib3}>
         <Stack sx={slideTrack3}>
           <Stack>
