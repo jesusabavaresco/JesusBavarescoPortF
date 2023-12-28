@@ -20,7 +20,7 @@ const Tech = () => {
         // markers:true,
         start: '-300 200',
         end: 'bottom 30%',
-        scrub: 2
+        // scrub: 2
       },
     });
     tl.fromTo(moveTech, {y:150}, {y:0, duration: 3})

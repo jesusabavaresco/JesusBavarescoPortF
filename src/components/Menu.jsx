@@ -61,14 +61,18 @@ function Menu({setShowMenu}) {
 
 
 
+        <Typography display={{xs:'none', sm:'none', md:'block', lg:'block', xl:'block'}} variant='h3' color={'black'} sx={{fontSize:'4rem', fontWeight:'bold', textTransform:'uppercase'}}>home</Typography>
         <Link to='/about' style={{textDecoration:'none'}}>
           <Typography display={{xs:'none', sm:'none', md:'block', lg:'block', xl:'block'}} variant='h3' color={'black'} sx={{fontSize:'4rem', fontWeight:'bold', textTransform:'uppercase'}}>about</Typography>
         </Link>
-        <Typography display={{xs:'none', sm:'none', md:'block', lg:'block', xl:'block'}} variant='h3' color={'black'} sx={{fontSize:'4rem', fontWeight:'bold', textTransform:'uppercase'}}>tecnologies</Typography>
-        <Typography display={{xs:'none', sm:'none', md:'block', lg:'block', xl:'block'}} variant='h3' color={'black'} sx={{fontSize:'4rem', fontWeight:'bold', textTransform:'uppercase'}}>projects</Typography>
+        {/* <Typography display={{xs:'none', sm:'none', md:'block', lg:'block', xl:'block'}} variant='h3' color={'black'} sx={{fontSize:'4rem', fontWeight:'bold', textTransform:'uppercase'}}>projects</Typography> */}
         <Stack alignItems='center' direction='row' spacing={4}>
+          <a href="https://www.linkedin.com/in/jesusbavaresco" style={{textDecoration:'none'}}>
           <Typography color={'black'} >LinkedIn</Typography>
+          </a>
+          <a href="https://github.com/jesusabavaresco" style={{textDecoration:'none'}}>
           <Typography color={'black'} >GitHub</Typography>
+          </a>
         </Stack>
       </Stack>
     </Stack>
