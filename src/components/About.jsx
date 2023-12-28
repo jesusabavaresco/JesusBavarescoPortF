@@ -70,7 +70,13 @@ const About = () => {
           ref={aboutRef}
           fontSize={20}
           color={"#d1d5db"}
-          width={"70%"}
+          width={{
+            xs:'100%',
+            sm:'100%',
+            md:'70%',
+            lg:'70&',
+            xl:'70%',
+          }}
         ></Typography>
       </Grid>
     </Grid>
