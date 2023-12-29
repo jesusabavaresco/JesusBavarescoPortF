@@ -53,7 +53,7 @@ const Proyects = () => {
                 lg:'none',
                 xl:'none'
               }}}>
-            <img width='300px'  height='150px' src={AW1} alt="" />
+            <img width='345px'  height='210px' src={AW1} alt="" />
               </Stack>
               <Stack sx={{display:{
                 xs:'none',
@@ -89,7 +89,7 @@ const Proyects = () => {
                 lg:'none',
                 xl:'none'
               }}}>
-            <img width='300px'  height='150px' src={ATH1} alt="" />
+            <img width='345px'  height='210px' src={ATH1} alt="" />
             </Stack>
             <Stack sx={{display:{
                 xs:'none',
