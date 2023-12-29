@@ -304,7 +304,7 @@ const FirstView = ({ showMenu }) => {
             size="small"
             variant="text"
             sx={{
-              color: "white",
+              color: themeChange.palette.text.secondary,
               marginLeft: "-7px",
               display: showMenu === true && "none",
             }}
