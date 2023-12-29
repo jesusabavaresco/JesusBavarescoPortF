@@ -46,9 +46,9 @@ const FirstView = ({ showMenu }) => {
     gsap.to(freeLance.current, {
       scrollTrigger: {
         trigger: freeLance.current,
-        // markers: true,
-        start: "-115 50%",
-        end: "-80 30%",
+        markers: true,
+        start: "-90 50%",
+        end: "-60 50%",
         scrub: 2,
       },
       duration: 2,
@@ -125,12 +125,6 @@ const FirstView = ({ showMenu }) => {
       cursor: "pointer",
     },
   };
-  const hoverRevert = {
-    ":hover": {
-      color: "#fff",
-      cursor: "pointer",
-    },
-  };
 
   return (
     <Grid container spacing={1} p={5}>
@@ -143,13 +137,15 @@ const FirstView = ({ showMenu }) => {
           xl={5}
           display={showMenu ? "none" : "flex"}
         >
+          <Stack display='flex'>
           <Typography
             ref={one}
             color={themeChange.palette.text.primary}
-            fontSize={75}
+            fontSize={85}
+            textAlign={'end'}
             textTransform={"uppercase"}
             sx={{
-              hoverStyles,
+              ...hoverStyles,
               display: {
                 xs: "block",
                 sm: "block",
@@ -158,15 +154,16 @@ const FirstView = ({ showMenu }) => {
                 xl: "none",
               },
             }}
-          >
+            >
             Full
           </Typography>
+          </Stack>
           <Typography
             ref={one}
             fontSize={135}
             textTransform={"uppercase"}
             sx={{
-              hoverStyles,
+              ...hoverStyles,
               color: themeChange.palette.text.primary ,
               display: {
                 xs: "none",
@@ -194,7 +191,7 @@ const FirstView = ({ showMenu }) => {
             fontSize={75}
             textTransform={"uppercase"}
             sx={{
-              hoverStyles,
+              ...hoverStyles,
               display: {
                 xs: "block",
                 sm: "block",
@@ -212,7 +209,7 @@ const FirstView = ({ showMenu }) => {
             fontSize={135}
             textTransform={"uppercase"}
             sx={{
-              hoverStyles,
+              ...hoverStyles,
               display: {
                 xs: "none",
                 sm: "none",
@@ -230,12 +227,11 @@ const FirstView = ({ showMenu }) => {
           <Stack direction="row" spacing={20}>
             <Typography
               ref={three}
-              color={themeChange.palette.text.secondary}
+              color={themeChange.palette.text.third}
               fontSize={50}
               textTransform={"uppercase"}
               margin={0}
               sx={{
-                hoverRevert,
                 display: {
                   xs: "block",
                   sm: "block",
@@ -254,7 +250,6 @@ const FirstView = ({ showMenu }) => {
               fontSize={125}
               textTransform={"uppercase"}
               sx={{
-                hoverRevert,
                 display: {
                   xs: "none",
                   sm: "none",

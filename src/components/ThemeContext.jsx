@@ -24,7 +24,7 @@ export const ThemeProvider = ({ children }) => {
       },
       text: {
         primary: lightMode ? '#12141B' : '#d1d5db',
-        secondary: lightMode ? '#0E352E' : '#fff',
+        secondary: lightMode ? '#0E352E' : '#ffffff',
         third: lightMode ? '#072E2D' : '#eafe9b',
         four: lightMode ? '#373A43' : '#9ca3af',
       }
