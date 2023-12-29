@@ -46,9 +46,9 @@ const FirstView = ({ showMenu }) => {
     gsap.to(freeLance.current, {
       scrollTrigger: {
         trigger: freeLance.current,
-        markers: true,
-        start: "-90 50%",
-        end: "-60 50%",
+        // markers: true,
+        start: "-80 50%",
+        end: "-20 50%",
         scrub: 2,
       },
       duration: 2,
