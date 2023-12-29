@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 
 const FirstView = ({ showMenu }) => {
-  const { themeChange } = useTheme();
+  const { themeChange, lightMode } = useTheme();
   const one = useRef(null);
   const two = useRef(null);
   const three = useRef(null);
@@ -121,7 +121,7 @@ const FirstView = ({ showMenu }) => {
 
   const hoverStyles = {
     ":hover": {
-      color: "#eafe9b",
+      color: lightMode ? '#072E2D' : "#eafe9b",
       cursor: "pointer",
     },
   };
