@@ -4,6 +4,8 @@ import { IconButton, Stack, Typography } from '@mui/material';
 import { gsap } from "gsap";
 import { Link } from 'react-router-dom';
 import { useTheme } from "./ThemeContext.jsx";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 // import { TextPlugin } from "gsap/TextPlugin";
 // gsap.registerPlugin(TextPlugin)
@@ -68,11 +70,11 @@ function Menu({setShowMenu}) {
         </Link>
         {/* <Typography display={{xs:'none', sm:'none', md:'block', lg:'block', xl:'block'}} variant='h3' color={'black'} sx={{fontSize:'4rem', fontWeight:'bold', textTransform:'uppercase'}}>projects</Typography> */}
         <Stack alignItems='center' direction='row' spacing={4}>
-          <a href="https://www.linkedin.com/in/jesusbavaresco" style={{textDecoration:'none'}}>
-          <Typography color={'black'} >LinkedIn</Typography>
+          <a href="https://www.linkedin.com/in/jesusbavaresco" style={{textDecoration:'none', color:'black'}}>
+            <LinkedInIcon/>
           </a>
-          <a href="https://github.com/jesusabavaresco" style={{textDecoration:'none'}}>
-          <Typography color={'black'} >GitHub</Typography>
+          <a href="https://github.com/jesusabavaresco" style={{textDecoration:'none', color:'black'}}>
+          <GitHubIcon/>
           </a>
         </Stack>
       </Stack>
