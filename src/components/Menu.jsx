@@ -56,14 +56,11 @@ function Menu({setShowMenu}) {
         <IconButton sx={{color:'black', padding:'2rem'}} onClick={closeMenu}><CloseIcon/></IconButton>
       </Stack>
       <Stack alignItems='center' spacing={5}>
+        <Typography display={{xs:'block', sm:'block', md:'none', lg:'none', xl:'none'}} variant='h3' color={'black'} sx={{fontSize:'2rem', fontWeight:'bold', textTransform:'uppercase'}}>home</Typography>
         <Link to='/about' style={{textDecoration:'none'}}>
           <Typography display={{xs:'block', sm:'block', md:'none', lg:'none', xl:'none'}} variant='h3' color={'black'} sx={{fontSize:'2rem', fontWeight:'bold', textTransform:'uppercase'}}>about</Typography>
         </Link>
-        <Typography display={{xs:'block', sm:'block', md:'none', lg:'none', xl:'none'}} variant='h3' color={'black'} sx={{fontSize:'2rem', fontWeight:'bold', textTransform:'uppercase'}}>tecnologies</Typography>
-        <Typography display={{xs:'block', sm:'block', md:'none', lg:'none', xl:'none'}} variant='h3' color={'black'} sx={{fontSize:'2rem', fontWeight:'bold', textTransform:'uppercase'}}>projects</Typography>
-
-
-
+        {/* <Typography display={{xs:'block', sm:'block', md:'none', lg:'none', xl:'none'}} variant='h3' color={'black'} sx={{fontSize:'2rem', fontWeight:'bold', textTransform:'uppercase'}}>projects</Typography> */}
 
         <Typography display={{xs:'none', sm:'none', md:'block', lg:'block', xl:'block'}} variant='h3' color={'black'} sx={{fontSize:'4rem', fontWeight:'bold', textTransform:'uppercase'}}>home</Typography>
         <Link to='/about' style={{textDecoration:'none'}}>
